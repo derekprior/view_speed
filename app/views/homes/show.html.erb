@@ -1,1 +1,17 @@
 <h1>Hello, World!</h1>
+
+<% benchmark("template inheritance to application partial") do %>
+  <%= render "header" %>
+<% end %>
+
+<% benchmark("full path to application partial") do %>
+  <%= render "application/header" %>
+<% end %>
+
+<% benchmark("view relative partial with bare name") do %>
+  <%= render "things" %>
+<% end %>
+
+<% benchmark("view relative partial with full path") do %>
+  <%= render "homes/things" %>
+<% end %>
